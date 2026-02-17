@@ -8,8 +8,9 @@ app = FastAPI()
 MODEL_PATH = "./jarvis_light_trained"
 
 print("Loading model...")
-tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
-model = AutoModelForCausalLM.from_pretrained(MODEL_PATH)
+model = AutoModelForCausalLM.from_pretrained("anupammehar640/jarvis-light")
+tokenizer = AutoTokenizer.from_pretrained("anupammehar640/jarvis-light")
+
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
